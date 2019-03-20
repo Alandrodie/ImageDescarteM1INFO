@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/mael/MASTER/IMAGE/ImageDescarteM1INFO/src/build",
+  "command": "/usr/bin/g++-5    -isystem /usr/local/include/opencv4  -std=c++11 -g   -o CMakeFiles/codeDetection.dir/main.cpp.o -c /home/mael/MASTER/IMAGE/ImageDescarteM1INFO/src/main.cpp",
+  "file": "/home/mael/MASTER/IMAGE/ImageDescarteM1INFO/src/main.cpp"
+},
+{
+  "directory": "/home/mael/MASTER/IMAGE/ImageDescarteM1INFO/src/build",
+  "command": "/usr/bin/g++-5    -isystem /usr/local/include/opencv4  -std=c++11 -g   -o CMakeFiles/codeDetection.dir/PreProcess.cpp.o -c /home/mael/MASTER/IMAGE/ImageDescarteM1INFO/src/PreProcess.cpp",
+  "file": "/home/mael/MASTER/IMAGE/ImageDescarteM1INFO/src/PreProcess.cpp"
+},
+{
+  "directory": "/home/mael/MASTER/IMAGE/ImageDescarteM1INFO/src/build",
+  "command": "/usr/bin/g++-5    -isystem /usr/local/include/opencv4  -std=c++11 -g   -o CMakeFiles/codeDetection.dir/CodeBarreDetection.cpp.o -c /home/mael/MASTER/IMAGE/ImageDescarteM1INFO/src/CodeBarreDetection.cpp",
+  "file": "/home/mael/MASTER/IMAGE/ImageDescarteM1INFO/src/CodeBarreDetection.cpp"
+}
+]
