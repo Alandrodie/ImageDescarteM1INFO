@@ -13,6 +13,11 @@ PreProcess::~PreProcess()
 {
 }
 
+Mat PreProcess::seuillage()
+{
+
+}
+
 bool PreProcess::open(string filePath)
 {
 	inputImage = imread(filePath, IMREAD_COLOR);

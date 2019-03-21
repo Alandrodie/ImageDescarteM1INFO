@@ -32,6 +32,8 @@ class PreProcess
 	 * Open and load an image located in the system at filePath
 	 */
 	bool open(string filePath);
+	Mat seuillage();
+	
 
 	Mat getFinalImage();
 	Mat getInputImage();
