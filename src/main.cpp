@@ -9,8 +9,27 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
+    
+
     PreProcess tools;
-    tools.seuillage();
+		bool opened = tools.open(argv[1]);
+		
+
+		if (!opened)
+		{
+			cerr << "Error opening image" << endl;
+			cout << "Usage: imageBlur <Image_Path>" << endl;
+			return -1;
+		}
+        Mat res =  tools.seuillage();
+
+    namedWindow("Input Image", WINDOW_AUTOSIZE);
+	imshow("Input Image", res);
+    imwrite("../../res/greyscale.jpg", res);
+
+   
+    
+
 
 
 

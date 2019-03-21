@@ -15,6 +15,41 @@ PreProcess::~PreProcess()
 
 Mat PreProcess::seuillage()
 {
+	Mat greyscale;
+	Mat result;
+
+	cvtColor(inputImage, this->outputImage, COLOR_BGR2GRAY);
+	Mat gradx;
+	Mat grady;
+
+	Sobel(outputImage, gradx, CV_32F, 1,0,-1);
+	Sobel(outputImage, grady, CV_32F, 0,1,-1);
+	Mat gradient_tmp;
+	Mat gradient;
+
+
+	subtract(gradx, grady, gradient_tmp);
+
+	convertScaleAbs(gradient_tmp, gradient);
+
+	int size= 8;
+	if (size % 2 == 0)
+		size++;
+
+	GaussianBlur(gradient, finalImage, Size(size, size), 0);
+
+	Mat result_tmp;
+	threshold(finalImage, result_tmp, 230, 255, THRESH_BINARY);
+	
+
+	Mat kernel;
+	getStructuringElement(MORPH_RECT, Size(21,21), kernel);
+	morphologyEx(result_tmp, result, MORPH_CLOSE, kernel );
+
+	
+
+
+	return result;
 
 }
 
@@ -38,8 +73,7 @@ void PreProcess::gaussian(int size, void *data)
 	Mat tmp2 = outputImage.clone();
 	if (size % 2 == 0)
 		size++;
-	GaussianBlur(outputImage, tmp2, Size(size, size), 0);
-	GaussianBlur(tmp2, ((PreProcess *)data)->finalImage, Size(size, size), 0);
+	GaussianBlur(outputImage, ((PreProcess *)data)->finalImage, Size(size, size), 0);
 	imshow("Input Image", ((PreProcess *)data)->finalImage);
 }
 
